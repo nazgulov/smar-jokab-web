@@ -276,13 +276,20 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
-                    <input type="text" id="name" placeholder="Vaše jméno" required>
-                    <input type="email" id="email" placeholder="Váš e-mail" required>
-                    <textarea id="message" rows="6" placeholder="Napište nám, co potřebujete připravit" required></textarea>
-                    <button type="submit" class="btn btn-primary full-width">Odeslat poptávku</button>
-                    <p id="formMessage" class="form-message"></p>
-                </form>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+
+    <input type="hidden" name="access_key" value="6fb6dcda-07b8-421f-a3fd-47e1474aeb7f">
+
+    <input type="hidden" name="subject" value="Nová poptávka z webu SMAR">
+    <input type="hidden" name="from_name" value="SMAR Web">
+
+    <input type="text" name="name" placeholder="Vaše jméno" required>
+    <input type="email" name="email" placeholder="Váš e-mail" required>
+    <textarea name="message" rows="5" placeholder="Zpráva" required></textarea>
+
+    <button type="submit" class="btn btn-primary full-width">Odeslat poptávku</button>
+
+</form>
             </div>
         </section>
     </main>
