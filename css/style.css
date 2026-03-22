@@ -238,6 +238,46 @@ ul {
     color: #ff7d78;
 }
 
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1a1f2b;
+}
+
+.contact-form select {
+    width: 100%;
+    padding: 15px 16px;
+    margin-bottom: 0;
+    border: 1px solid #d0d5dd;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #ffffff;
+}
+
+.contact-form select:focus {
+    outline: none;
+    border-color: #e10600;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
 .hero-description {
     font-size: 1.08rem;
     color: rgba(255, 255, 255, 0.82);

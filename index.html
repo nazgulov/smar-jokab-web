@@ -279,16 +279,51 @@
                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
 
     <input type="hidden" name="access_key" value="6fb6dcda-07b8-421f-a3fd-47e1474aeb7f">
-
     <input type="hidden" name="subject" value="Nová poptávka z webu SMAR">
     <input type="hidden" name="from_name" value="SMAR Web">
 
-    <input type="text" name="name" placeholder="Vaše jméno" required>
-    <input type="email" name="email" placeholder="Váš e-mail" required>
-    <textarea name="message" rows="5" placeholder="Zpráva" required></textarea>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="name">Jméno a příjmení</label>
+            <input type="text" id="name" name="name" placeholder="Např. Jan Novák" required>
+        </div>
+
+        <div class="form-group">
+            <label for="company">Firma</label>
+            <input type="text" id="company" name="company" placeholder="Např. SMAR s.r.o.">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="request_type">Typ požadavku</label>
+        <select id="request_type" name="request_type" required>
+            <option value="">Vyberte typ požadavku</option>
+            <option value="Konzultace">Konzultace</option>
+            <option value="Vyber produktu">Výběr produktu</option>
+            <option value="Navrh reseni">Návrh řešení</option>
+            <option value="Technicky dotaz">Technický dotaz</option>
+            <option value="Obchodni poptavka">Obchodní poptávka</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Zpráva</label>
+        <textarea id="message" name="message" rows="6" placeholder="Popište stručně, s čím potřebujete pomoci" required></textarea>
+    </div>
 
     <button type="submit" class="btn btn-primary full-width">Odeslat poptávku</button>
-
 </form>
             </div>
         </section>
