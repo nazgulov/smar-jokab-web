@@ -125,6 +125,10 @@
 			text-align: center;
 		}
 
+		.overlay.is-hidden {
+			display: none;
+		}
+
 		.panel {
 			width: min(560px, 100%);
 			padding: 26px 22px;
@@ -241,7 +245,7 @@
 				<h2>Klikaci testovaci hra</h2>
 				<p>Ovladani je pouze mysi: klikej na cervene terce a vyhybej se oranzovym.</p>
 				<p>Mas 30 sekund. Hra konci i pri 8 minutych terci.</p>
-				<button class="btn" id="startBtn" type="button">Spustit hru</button>
+				<button class="btn" data-action="start" type="button">Spustit hru</button>
 			</div>
 		</div>
 	</main>
@@ -296,17 +300,15 @@
 			clearInterval(state.gameTimer);
 			clearTargets();
 
-			overlay.hidden = false;
+			overlay.classList.remove("is-hidden");
 			const verdict = state.score >= 180 ? "Skvela trefa!" : "Dobry pokus!";
 			panelContent.innerHTML = `
 				<h2>Konec hry</h2>
 				<p class="result">${verdict} Skore: ${state.score}</p>
 				<p>Zasahy v rade (max): ${state.combo}</p>
 				<p>Minute terce: ${state.misses}</p>
-				<button class="btn" id="restartBtn" type="button">Hrat znovu</button>
+				<button class="btn" data-action="restart" type="button">Hrat znovu</button>
 			`;
-
-			document.getElementById("restartBtn").addEventListener("click", startGame);
 		}
 
 		function spawnTarget() {
@@ -371,7 +373,7 @@
 			state.running = true;
 
 			clearTargets();
-			overlay.hidden = true;
+			overlay.classList.add("is-hidden");
 			updateUi();
 
 			clearInterval(state.spawnTimer);
@@ -380,6 +382,8 @@
 			state.spawnTimer = setInterval(() => {
 				spawnTarget();
 			}, 360);
+
+			spawnTarget();
 
 			state.gameTimer = setInterval(() => {
 				state.timeLeft -= 1;
@@ -391,8 +395,13 @@
 			}, 1000);
 		}
 
-		overlay.hidden = false;
-		document.getElementById("startBtn").addEventListener("click", startGame);
+		overlay.classList.remove("is-hidden");
+		overlay.addEventListener("click", (event) => {
+			const action = event.target?.dataset?.action;
+			if (action === "start" || action === "restart") {
+				startGame();
+			}
+		});
 		updateUi();
 	</script>
 </body>
