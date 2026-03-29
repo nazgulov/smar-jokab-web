@@ -771,7 +771,6 @@ ul {
 /* RESPONSIVE */
 @media (max-width: 1100px) {
     .hero-grid,
-    .split-section,
     .cards-grid,
     .service-grid,
     .reasons-grid,
@@ -783,6 +782,15 @@ ul {
 
     .hero-panel {
         justify-content: flex-start;
+    }
+
+    .split-section {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .split-right {
+        max-width: none;
     }
 
     .cta-band-inner {
