@@ -871,6 +871,44 @@ ul {
     }
 }
 
+@media (min-width: 821px) and (max-width: 1180px) and (orientation: landscape) {
+    .section {
+        padding: 72px 0;
+    }
+
+    .hero {
+        padding: 88px 0 70px;
+    }
+
+    .hero-grid,
+    .split-section,
+    .cards-grid,
+    .service-grid,
+    .reasons-grid,
+    .contact-grid,
+    .trust-strip-inner,
+    .homepage-image-grid {
+        gap: 18px;
+    }
+
+    .homepage-image-card img {
+        height: 190px;
+    }
+
+    .card-product-image {
+        height: 145px;
+    }
+
+    .glass-card,
+    .contact-form,
+    .modern-card,
+    .reason-box,
+    .service-card,
+    .trust-item {
+        padding: 22px;
+    }
+}
+
 @media (max-width: 768px) {
     .form-row {
         grid-template-columns: 1fr;
