@@ -547,6 +547,54 @@ ul {
     font-weight: 700;
 }
 
+.section-light {
+  background-color: #f8f9fb;
+  padding: 80px 0;
+}
+
+.split-section {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.split-left {
+  flex: 1;
+}
+
+.split-left h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+
+.section-label {
+  color: #e30613; /* ABB červená */
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.split-right {
+  flex: 1;
+  max-width: 500px;
+}
+
+.split-right p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* CARD efekt */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
 .service-card p {
     color: rgba(255, 255, 255, 0.72);
 }
