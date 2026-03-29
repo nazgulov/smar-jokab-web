@@ -771,13 +771,15 @@ ul {
 /* RESPONSIVE */
 @media (max-width: 1100px) {
     .hero-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
     .cards-grid,
-    .service-grid,
     .reasons-grid,
-    .contact-grid,
     .trust-strip-inner,
     .homepage-image-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .hero-panel {
@@ -793,6 +795,12 @@ ul {
         max-width: none;
     }
 
+    .homepage-image-card img {
+        object-fit: contain;
+        background: #f8fafc;
+        padding: 10px;
+    }
+
     .cta-band-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -800,6 +808,15 @@ ul {
 }
 
 @media (max-width: 820px) {
+    .cards-grid,
+    .service-grid,
+    .reasons-grid,
+    .contact-grid,
+    .trust-strip-inner,
+    .homepage-image-grid {
+        grid-template-columns: 1fr;
+    }
+
     .nav {
         display: none;
         position: absolute;
